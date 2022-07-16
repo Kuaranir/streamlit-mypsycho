@@ -1,10 +1,9 @@
-import time
 import streamlit as st
 import numpy as np
 from PIL import Image
 
 st.title('Мой психолог: ИИ')
-image = Image.open('/home/alexander/ML/Streamlit-psycho/RIAN_993974.HR_.ru_.jpg')
+image = Image.open('/home/alexander/ML/streamlit-mypsycho/RIAN_993974.HR_.ru_.jpg')
 st.image(image, caption = 'Исследование на полиграфе')
 
 def load_data():
@@ -47,8 +46,7 @@ else:
      st.write('Запустите исследование')
 
 
-with st.spinner('Wait for it...'):
-    time.sleep(2)
+st.spinner('Wait for it...')
 st.success('Done!')
 
 with st.container():

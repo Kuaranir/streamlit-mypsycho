@@ -1,4 +1,3 @@
-time
 streamlit
 numpy
 PIL
