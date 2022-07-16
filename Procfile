@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run image_classification.py
+web: sh setup.sh && streamlit run st-start.py
