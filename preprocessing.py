@@ -99,3 +99,4 @@ def preprocess(data):
     data.insert(8, 'Diff', data.apply(lambda row: max_diff_with_val(row.Data, row.Mean), axis=1))
     data.insert(8, 'Diff_2', data.apply(lambda row: max_diff_with_val(row.Data_2, row.Mean_2), axis=1))
 
+    return data
