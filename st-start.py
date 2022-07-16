@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 st.title('Мой психолог: ИИ')
-image = Image.open('https://newizv.ru/attachments/27e959e9382672f8826de4367888b0a9a95ea136/store/fill/360/200/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f.jpg')
+image = 'https://newizv.ru/attachments/27e959e9382672f8826de4367888b0a9a95ea136/store/fill/360/200/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f.jpg'
 st.image(image, caption = 'Исследование на полиграфе')
 
 def load_data():
