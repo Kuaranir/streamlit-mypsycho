@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import tensorflow as tf
 
 st.title('Мой психолог: ИИ')
 st.image('https://newizv.ru/attachments/27e959e9382672f8826de4367888b0a9a95ea136/store/fill/360/200/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f/f0e21b931e498bcc91c2e33905fbb228fc31cf3cdda2b398d07fe3e6790f.jpg', caption = 'Исследование на полиграфе')
@@ -12,26 +13,13 @@ def load_data():
         return None
 
 data = load_data()
-
 result = st.button('Загрузить данные')
 
-#Кастомные значения, вводимые вручную:
-st.subheader('Введите ниже исходные значения для исследования:')
+# Загрузка ранее обученной модели (нейросети с весами):
+model = tf.keras.models.load_model('https://drive.google.com/file/d/10JAdMZuoHtVolv2mrfmruVTiflWvD_tM/view')
+predicted_stress = model.predict(X_test)
 
-option = st.selectbox(
-     'Выберите номер вопроса:',
-     (1,2,3,4,5,6,7,8,9,10,11,12,13))
-st.write('Выбранный номер вопроса:', option)
 
-option = st.selectbox(
-     'Выберите номер группы вопроса:',
-     (0,1,2,3,4,5,6))
-st.write('Выбранный номер группы вопроса:', option)
-
-option = st.selectbox(
-     'Выберите номер повторения:',
-     (1, 2, 3, 4))
-st.write('Выбранный номер повторения:', option)
 
 name = st.text_input('Введите имя испытуемого: ')
 st.write('Имя испытуемого:', name)
@@ -41,7 +29,7 @@ n = np.random.randint(0, 3)
 if st.button('Нажмите для запуска исследования'):
      st.write('Предсказанный уровень стресса:', n)
 else:
-     st.write('Запустите исследование')
+     st.write('Запустите исследование или проверьте данные')
 
 
 st.spinner('Wait for it...')
