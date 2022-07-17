@@ -99,4 +99,21 @@ def preprocess(data):
     data.insert(8, 'Diff', data.apply(lambda row: max_diff_with_val(row.Data, row.Mean), axis=1))
     data.insert(8, 'Diff_2', data.apply(lambda row: max_diff_with_val(row.Data_2, row.Mean_2), axis=1))
 
-    return data
+    features = [
+        'Test_index',
+        'Presentation',
+        'Question',
+        'Amplitude',
+        'Data_STD',
+        'Amplitude_2',
+        'Data_2_STD',
+        'Mean',
+        'Mean_2',
+        'Angle',
+        'Angle_2',
+        'Freq',
+        'Data_max_grad',
+        'Data_2_max_grad'
+    ]
+
+    return data[features]
