@@ -1,9 +1,7 @@
 streamlit
 numpy
 pandas
-pickle
 data_preprocessing
-pandas
 functools
 scipy
 sklearn
